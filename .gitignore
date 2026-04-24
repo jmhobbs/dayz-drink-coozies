@@ -1,0 +1,5 @@
+*.blend*
+!*.blend
+*.arm
+*.fbx
+*.obj
