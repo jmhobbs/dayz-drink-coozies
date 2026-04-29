@@ -15,42 +15,42 @@ class CfgPatches
 
 class CfgSlots
 {
-  class Slot_Stubby
-  {
-    name="stubby";
-    displayName="Can";
-    ghostIcon="unknown";
-  };
+	class Slot_Stubby
+	{
+		name="stubby";
+		displayName="Can";
+		ghostIcon="unknown";
+	};
 };
 
 class CfgNonAIVehicles
 {
-  class ProxyAttachment;
-  class ProxySodaCanProxy: ProxyAttachment
-  {
-    scope = 2;
-    inventorySlot = "stubby";
-    model="Drink_Coozies\gear\containers\SodaCanProxy.p3d";
-  };
+	class ProxyAttachment;
+	class ProxySodaCanProxy: ProxyAttachment
+	{
+		scope = 2;
+		inventorySlot = "stubby";
+		model="Drink_Coozies\gear\containers\SodaCanProxy.p3d";
+	};
 };
 
 class CfgVehicles
 {
-    class Edible_Base;
-    class SodaCan_ColorBase: Edible_Base
-    {
-        inventorySlot[] += { "stubby" };
-    };
+	class Edible_Base;
+	class SodaCan_ColorBase: Edible_Base
+	{
+		inventorySlot[] += { "stubby" };
+	};
 
-    class Container_Base;
+	class Container_Base;
 	class Coozie_ColorBase: Container_Base
 	{
-        displayName="Coozie";
-        descriptionShort="Coozie, Koozie, stubby holder, beer sleeve or bottle jacket. Whatever you call it, it keeps your drink cold.";
-        model="Drink_Coozies\gear\containers\coozie.p3d";
-        itemSize[]={1,2};
-        itemsCargoSize[]={0,0};
-        weight=5;
+		displayName="Coozie";
+		descriptionShort="Coozie, Koozie, stubby holder, beer sleeve or bottle jacket. Whatever you call it, it keeps your drink cold.";
+		model="Drink_Coozies\gear\containers\coozie.p3d";
+		itemSize[]={1,2};
+		itemsCargoSize[]={0,0};
+		weight=5;
 		hiddenSelections[]=
 		{
 			"camoGround"
@@ -59,11 +59,11 @@ class CfgVehicles
 		{
 			"Drink_Coozies\gear\containers\data\coozie_co.paa"
 		};
-        attachments[]=
-        {
-            "stubby"
-        };
-        class DamageSystem
+		attachments[]=
+		{
+			"stubby"
+		};
+		class DamageSystem
 		{
 			class GlobalHealth
 			{
@@ -80,7 +80,7 @@ class CfgVehicles
 						},
 						{
 							0.69999999,
-							
+
 							{
 								"Drink_Coozies\gear\containers\data\coozie.rvmat"
 							}
@@ -126,9 +126,23 @@ class CfgVehicles
 		};
 	};
 
-    class Coozie_WILDLANDZ: Coozie_ColorBase
-    {
-        scope=2;
-        displayName="WILDLANDZ Coozie";
-    };
+	class Coozie_WILDLANDZ: Coozie_ColorBase
+	{
+		scope=2;
+		displayName="WILDLANDZ Coozie";
+		hiddenSelectionsTextures[]=
+		{
+			"Drink_Coozies\gear\containers\data\coozie_wildlandz_co.paa"
+		};
+	};
+
+	class Coozie_GC_Kolumbus: Coozie_ColorBase
+	{
+		scope=2;
+		displayName="Kolumbus Coozie";
+		hiddenSelectionsTextures[]=
+		{
+			"Drink_Coozies\gear\containers\data\coozie_kolumbus_co.paa"
+		};
+	};
 };
